@@ -22,9 +22,9 @@ int main() {
     for (int i=0; i < cpu_info.get_cpu_n(); ++i){
         CPU cur_cpu = cpus[i];
         cur_cpu.find_cpu_usage();
-        printf("cpu%d usage: %.2f%c\n", cur_cpu.get_cpu_id(), cur_cpu.get_cpu_usage(), '%');
-        printf("cpu%d user usage: %.2f%c\n", cur_cpu.get_cpu_id(), cpu_info.get_cpu_user_usage(), '%');
-        printf("cpu%d system usage: %.2f%c\n", cur_cpu.get_cpu_id(), cpu_info.get_cpu_system_usage(), '%');
+        printf("cpu%d usage: %.2f%c\n", cur_cpu.get_cpu_id()+1, cur_cpu.get_cpu_usage(), '%');
+        printf("cpu%d user usage: %.2f%c\n", cur_cpu.get_cpu_id()+1, cpu_info.get_cpu_user_usage(), '%');
+        printf("cpu%d system usage: %.2f%c\n", cur_cpu.get_cpu_id()+1, cpu_info.get_cpu_system_usage(), '%');
         std::cout << std::endl;
     }
     MemoryInfo memory;
