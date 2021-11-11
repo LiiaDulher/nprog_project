@@ -44,18 +44,33 @@ void MemoryInfo::get_memory_info(){
 }
 
 std::string MemoryInfo::memory_info_string() {
-    std::string str = "Memory information(in Kb):\n";
+    std::string used_mem_per = std::to_string(float(memory_used)/memory_total*100);
+    auto pos = used_mem_per.find('.');
+    if (pos != std::string::npos){
+        used_mem_per = used_mem_per.substr(0, used_mem_per.size()-pos-2);
+    }
+    std::string free_mem_per = std::to_string(float(memory_free)/memory_total*100);
+    pos = free_mem_per.find('.');
+    if (pos != std::string::npos){
+        free_mem_per = free_mem_per.substr(0, free_mem_per.size()-pos-2);
+    }
+    std::string avil_mem_per = std::to_string(float(available)/memory_total*100);
+    pos = avil_mem_per.find('.');
+    if (pos != std::string::npos){
+        avil_mem_per = avil_mem_per.substr(0, avil_mem_per.size()-pos-2);
+    }
+    std::string str = "Memory information(in Mb):\n";
     str += "\tmemory:\n";
-    str += "\t\ttotal memory: " + std::to_string(memory_total);
-    str += "\n\t\tused memory:  " + std::to_string(memory_used);
-    str += "\n\t\tfree memory:  " + std::to_string(memory_free);
-    str += "\n\tavailable memory: " + std::to_string(available);
-    str += "\n\tshared memory:    " + std::to_string(shared);
-    str += "\n\tbuff&cache:       " + std::to_string(buff_cache);
+    str += "\t\ttotal memory: " + std::to_string(float(memory_total)/1024);
+    str += "\n\t\tused memory:  " + std::to_string(float(memory_used)/1024) + " (" + used_mem_per + "%)";
+    str += "\n\t\tfree memory:  " + std::to_string(float(memory_free)/1024) + " (" + free_mem_per + "%)";
+    str += "\n\tavailable memory: " + std::to_string(float(available)/1024) + " (" + avil_mem_per + "%)";
+    str += "\n\tshared memory:    " + std::to_string(float(shared)/1024);
+    str += "\n\tbuff&cache:       " + std::to_string(float(buff_cache)/1024);
     str += "\n\tswap space:\n";
-    str += "\t\ttotal swap space: " + std::to_string(swap_total);
-    str += "\n\t\tused swap space:  " + std::to_string(swap_used);
-    str += "\n\t\tfree swap space:  " + std::to_string(swap_free);
+    str += "\t\ttotal swap space: " + std::to_string(float(swap_total)/1024);
+    str += "\n\t\tused swap space:  " + std::to_string(float(swap_used)/1024);
+    str += "\n\t\tfree swap space:  " + std::to_string(float(swap_free)/1024);
     str += "\n";
     return str;
 }
