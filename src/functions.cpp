@@ -52,7 +52,7 @@ std::vector<int64_t> get_idle_total_times(std::string cpu_name) {
 std::vector<int64_t> get_del_cpu_times(std::string cpu_name) {
     auto start_time = std::chrono::system_clock::now();
     std::vector<int64_t> first_times = get_idle_total_times(cpu_name);
-    std::this_thread::sleep_until(start_time + std::chrono::seconds(1));
+    std::this_thread::sleep_until(start_time + std::chrono::milliseconds(1000));
     std::vector<int64_t> second_times = get_idle_total_times(cpu_name);
     int64_t del_total_time = second_times[0] - first_times[0];
     int64_t del_idle_time = second_times[1] - first_times[1];
