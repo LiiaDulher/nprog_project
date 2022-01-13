@@ -9,16 +9,16 @@ On resourses tab user can see:
   * average cpu system usage(in %)
   * same items for each cpu core
 * memory information(in Mb):
-        * total memory
-        * used memory
-        * free memory
-        * avaliable memory
-        * shared memory
-        * buffer and cache
+  * total memory
+  * used memory
+  * free memory
+  * avaliable memory
+  * shared memory
+  * buffer and cache
 * swap space information(in Mb):
-        * total swap space
-        * used swap space
-        * free swaped space
+  * total swap space
+  * used swap space
+  * free swaped space
 Authors (team): [Halyna Koziak](https://github.com/hkoziak),  [Liia Dulher](https://github.com/LiiaDulher).
 
 
