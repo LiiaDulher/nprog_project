@@ -5,7 +5,7 @@ Authors (team): [Halyna Koziak](https://github.com/hkoziak),  [Liia Dulher](http
 ## General information 
 
 This is GUI, that shows statistic of Linux OS. It is created based on information from /nprog directory. GUI has resourses and chart tabs.<br>
-On resourses tab user can see:
+On resourses tab user sees:
 * cpu information:
   * number of cores
   * average cpu usage(in %)
@@ -24,5 +24,12 @@ On resourses tab user can see:
   * used swap space
   * free swaped space
 
+On charts tab user sees:
+* avarage cpu history
+* each cpu core history
+* memory history
+  * used memory history
+  * used swap space history 
+
 ## Usage
-QtDesigneiner 5 in Release mode
+Qt Designer 5 in Release mode
